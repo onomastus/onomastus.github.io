@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Language" content="en">
+
+  <title>onomastus | Infosec Blog</title>
+
+  <link rel="canonical" href="https://onomastus.github.io/">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8/normalize.min.css">
+  <link rel="stylesheet" href="/css/min.css"/>
+  <link rel="stylesheet" href="/css/dark.css"/>
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="onomastus | Infosec Blog" />
+  <script defer src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js" integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4" crossorigin="anonymous"></script>
+
+
+  <meta name="generator" content="Hugo 0.80.0" />
+</head>
+
+
+  
+<body class="colorscheme-auto" onload=" twemoji.parse(document.body); ">
+
+  <div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle"><i class="fa fa-adjust fa-fw" aria-hidden="true"></i></a>
+  </div>
+
+
+  <main class="wrapper">
+
+    <nav class="navigation">
+    <section class="container">
+      <a class="navigation-title" href="/">onomastus | Infosec Blog</a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle">
+      <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+    </label>
+
+    <ul class="navigation-list">      
+      <li class="navigation-item">
+        <a class="navigation-link" href="/posts/">Posts</a>
+      </li>
+      <li class="navigation-item">
+        <a class="navigation-link" href="/about/">About</a>
+      </li>
+    </ul>
+
+    </section>
+    </nav>
+
+  <div class="content">
+  <section class="container centered">
+<p>In this tutorial I will show you exactly what to buy and how to program cheap chinese Arduino clones in order to make a DIY USB Rubber Ducky with a PoC payload.</p>
+<h2 id="what-to-buy">What to buy</h2>
+<p>Everything that we need can be bought from Aliexpress. I will link the articles but you can find the same from other sellers, at different prices.</p>
+<p>Note: I am not sponsored by any of these sellers or Aliexpress itself.</p>
+<p><a href="https://www.aliexpress.com/item/32768308647.html?spm=a2g0o.productlist.0.0.2f275a53EMvaVv&amp;algo_pvid=87260690-1272-4b5f-adb8-c420a641849d&amp;algo_expid=87260690-1272-4b5f-adb8-c420a641849d-4&amp;btsid=0b0a0ad815985600288644828e2a87&amp;ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_">Pro Micro</a></p>
+<p>Note: I recommend buying at least two for a few reasons :</p>
+<ul>
+<li>They can not work (these are $3 after all...)</li>
+<li>You might break one when using your soldering iron (but if you&#39;re careful this won&#39;t happen)</li>
+<li>You will probably want to have more than one on you since you can only store one payload on each</li>
+</ul>
+<p><a href="https://www.aliexpress.com/item/32801279248.html?spm=a2g0o.detail.1000014.4.162f12f7ZRibxc&amp;gps-id=pcDetailBottomMoreOtherSeller&amp;scm=1007.13338.177756.0&amp;scm_id=1007.13338.177756.0&amp;scm-url=1007.13338.177756.0&amp;pvid=40d66d96-4138-410a-b586-15d3e0adfb42&amp;_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.13338.177756.0,pvid:40d66d96-4138-410a-b586-15d3e0adfb42,tpp_buckets:668%230%23131923%2384_668%23808%235965%23559_668%23888%233325%237_3338%230%23177756%230_3338%233142%239890%238_668%232846%238109%23228_668%232717%237561%23382_668%231000022185%231000066055%230_668%233422%2315392%23599">Micro USB male to USB male adapter</a></p>
+<p>Note: You can use your own Micro USB to USB cable but you need to make sure they have 2 pairs of wire (one is for power, the other for data transfer).</p>
+<p><a href="https://www.aliexpress.com/item/32703078819.html?spm=a2g0o.detail.1000014.5.1df74d45jvmGuL&amp;gps-id=pcDetailBottomMoreOtherSeller&amp;scm=1007.13338.177756.0&amp;scm_id=1007.13338.177756.0&amp;scm-url=1007.13338.177756.0&amp;pvid=39c24fc9-c03e-4b7a-ba62-a4f5f0b840da&amp;_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.13338.177756.0,pvid:39c24fc9-c03e-4b7a-ba62-a4f5f0b840da,tpp_buckets:668%230%23131923%2346_668%23808%235965%23559_668%23888%233325%237_3338%230%23177756%230_3338%233142%239890%238_668%232846%238109%23228_668%232717%237561%23382_668%231000022185%231000066055%230_668%233422%2315392%23566">Push buttons</a>.
+It is better to have long pins. I will show you why later.</p>
+<p>Last thing you need is a soldering iron kit. <a href="https://www.aliexpress.com/item/4000019437594.html?spm=a2g0o.productlist.0.0.32c419f3cKTkZO&amp;algo_pvid=5df4c023-ebe4-4a8f-8b09-bc0e1ce659a3&amp;algo_expid=5df4c023-ebe4-4a8f-8b09-bc0e1ce659a3-9&amp;btsid=0b0a22a415985605992227622ea34d&amp;ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_">This one</a> is a good option for a cheap start in hardware hacking, I&#39;m currently using it and have no problems with it. Make sure to select the right plug type and voltage according to where you live.</p>
+<p>Now that you bought everything you can keep reading... Or not. Because the packages will arrive probably in 3 weeks or more. If you already have everything or you received it, let&#39;s continue !</p>
+<h2 id="preparing-the-hardware">Preparing the hardware</h2>
+<h3 id="connecting-the-pro-micro-to-your-computer">Connecting the Pro Micro to your computer</h3>
+<p>If your Pro Micro is correctly connected, it will show up in your device manager. If not, your cable is probably at fault. As there is no standards that will tell you if an adapter is capable of data transfer, it can be tricky to find one. The adapter I linked above works perfectly. You can also make your own adapters by buying or recycling connectors and wires.</p>
+<h3 id="installing-the-push-button">Installing the push button</h3>
+<p>The button is useful because by default the script will execute each time you plug your Pro Micro to the computer, and each time you upload a new script. To prevent this, use a push button. When it is pushed, the script won&#39;t execute.
+Solder the button pins on 3 and on GND (ground).</p>
+<p>The hardware part is finished. Let&#39;s move on to programming.</p>
+<h2 id="creating-the-payload">Creating the payload</h2>
+<p>The payload will do the following :</p>
+<ul>
+<li>Download an image of your choice (hosted on a website) and set it as a wallpaper</li>
+<li>Take a screenshot of the Desktop with the Icons and Taskbar</li>
+<li>Setting the mouse cursor to &quot;Unavailable&quot; to imply that the PC is not responding</li>
+<li>Removing the icons and setting the Taskbar to auto-hide on top (I haven&#39;t found a way of removing the taskbar)</li>
+</ul>
+<p>The last step is accomplished by modifying registry keys. The payload includes a backup of those keys and I will be posting an &quot;Antidot&quot; in the form of a Powershell script that restores the settings.</p>
+<p>I am not responsible for any damage caused, and encourage you to test it on a Virtual Machine. This is provided for educational purposes and to raise awareness as to why it&#39;s important to lock your session.</p>
+<h3 id="ducky-scripts-duckuino">Ducky Scripts &amp; Duckuino</h3>
+<p>In various tutorials, you are told to choose a USB Rubber Ducky Payload from <a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads">this list</a>. And to paste it into a program called <a href="https://d4n5h.github.io/Duckuino/">Duckuino</a> that is supposed to translate it into the language microcontrollers can understand.
+However I couldnt get the script I wanted to work, and also you don&#39;t learn a lot by copying and pasting code...</p>
+<p>This is the &quot;Hello World!&quot; script in &quot;Rubber Ducky&quot; language :</p>
+<pre><code><span class="hljs-keyword">DELAY</span> <span class="hljs-number">3000</span>
+GUI r
+<span class="hljs-keyword">DELAY</span> <span class="hljs-number">500</span>
+STRING notepad
+<span class="hljs-keyword">DELAY</span> <span class="hljs-number">500</span>
+ENTER
+<span class="hljs-keyword">DELAY</span> <span class="hljs-number">750</span>
+STRING Hello World!
+ENTER
+</code></pre><p>Translating it with Duckuino gives the following :</p>
+<pre><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;HID-Project.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;HID-Settings.h&gt;</span></span>
+
+<span class="hljs-comment">// Utility function</span>
+<span class="hljs-keyword">void</span> typeKey(<span class="hljs-keyword">int</span> key){
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(key);
+ <span class="hljs-built_in">delay</span>(<span class="hljs-number">50</span>);
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">release</span>(key);
+}
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>()
+{
+ <span class="hljs-comment">// Start Keyboard and Mouse</span>
+ AbsoluteMouse.<span class="hljs-built_in">begin</span>();
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">begin</span>();
+
+ <span class="hljs-comment">// Start Payload</span>
+ <span class="hljs-built_in">delay</span>(<span class="hljs-number">3000</span>);
+
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(KEY_LEFT_GUI);
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(<span class="hljs-number">114</span>);
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">releaseAll</span>();
+ <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"notepad"</span>);
+ <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
+ typeKey(KEY_RETURN);
+
+ <span class="hljs-built_in">delay</span>(<span class="hljs-number">750</span>);
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello World!"</span>);
+ typeKey(KEY_RETURN);
+
+ <span class="hljs-comment">// End Payload</span>
+ <span class="hljs-comment">// Stop Keyboard and Mouse</span>
+ <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">end</span>();
+ AbsoluteMouse.<span class="hljs-built_in">end</span>();
+}
+
+<span class="hljs-comment">// Unused</span>
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {}
+</code></pre><p>The first thing you may notice is that it is calling a Mouse function. However, the mouse isn&#39;t used at all in this program. I believe this just appears for every program by default.
+I also found that using the Keyboard library was more simple and suits our needs for basic payloads. So, we can make things way more simple.</p>
+<h3 id="making-the-script-ourself">Making the script ourself</h3>
+<p>Simply copy this <a href="https://github.com/onomastus/hardware-hacking/blob/master/bad-usb/badusb.ino">PoC script</a> and paste it in your Arduino IDE.
+Then, upload the script. Once it&#39;s uploaded, it will execute automatically.</p>
+<h4 id="explanations">Explanations</h4>
+<ul>
+<li>The first part of the code are functions. Those keystrokes are used several times in the payload, to shorten and simplify the code they are put into functions.</li>
+</ul>
+<h4 id="payload">Payload</h4>
+<ul>
+<li>Create a folder &quot;pond&quot; (reference to ducks), download an image (replace the link if wanted).</li>
+<li>Set it as background using MSPaint (the most stable way I&#39;ve found).</li>
+<li>Clean up the machine by deleting the folder.</li>
+</ul>
+
+</div>
+</section>
+</div>
+
+<footer class="footer">
+<section class="container">
+        <p>Hack The Planet!</p>
+      © 2019 - 2021 onomastus 
+</section>
+</footer>
+
+</main>
+
+<script src="/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+<script>
+  (function(f, a, t, h, o, m){
+  a[h]=a[h]||function(){
+    (a[h].q=a[h].q||[]).push(arguments)
+  };
+  o=f.createElement('script'),
+  m=f.getElementsByTagName('script')[0];
+  o.async=1; o.src=t; o.id='fathom-script';
+  m.parentNode.insertBefore(o,m)
+  })(document, window, '//analytics.example.com/tracker.js', 'fathom');
+  fathom('set', 'siteId', 'ABCDE');
+  fathom('trackPageview');
+</script>
+<script async defer data-domain="example.com" src="https://analytics.example.com/js/plausible.js"></script>
+<script data-goatcounter="https://code.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> 
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "token"}'></script>
+
+
+  </body>
+</html>
