@@ -11,10 +11,11 @@
   <link rel="canonical" href="https://onomastus.github.io/">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+  integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8/normalize.min.css">
-  <link rel="stylesheet" href="/css/min.css"/>
-  <link rel="stylesheet" href="/css/dark.css"/>
+  <link rel="stylesheet" href="/css/coder.min.f01c647a0d25b40da992a37c3376291185eed8a50ced8c26cc2c0bcfe38c97df.css" integrity="sha256-8Bxkeg0ltA2pkqN8M3YpEYXu2KUM7YwmzCwLz&#43;OMl98=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder-dark.min.126ad3988d46bdae6217a11105b53c9662bca05f39d42d3c0fb366919d334620.css" integrity="sha256-EmrTmI1Gva5iF6ERBbU8lmK8oF851C08D7NmkZ0zRiA=" crossorigin="anonymous" media="screen" />
   <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
@@ -26,8 +27,6 @@
   <meta name="generator" content="Hugo 0.80.0" />
 </head>
 
-
-  
 <body class="colorscheme-auto" onload=" twemoji.parse(document.body); ">
 
   <div class="float-container">
@@ -57,7 +56,44 @@
     </section>
     </nav>
 
-<div>
+
+<div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">All in One TryHackMe Writeup</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-01-12T16:08:20&#43;05:30'>
+                3rd of February, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="/about/">onomastus</a></div>
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/tutorials/">Tutorial</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1>Make your own USB Rubber Ducky for less than $5</h1>
+
+<p><img src="" alt=""></p>
+
 <p>In this tutorial I will show you exactly what to buy and how to program cheap chinese Arduino clones in order to make a DIY USB Rubber Ducky with a PoC payload.</p>
 <h2 id="what-to-buy">What to buy</h2>
 <p>Everything that we need can be bought from Aliexpress. I will link the articles but you can find the same from other sellers, at different prices.</p>
@@ -96,58 +132,69 @@ Solder the button pins on 3 and on GND (ground).</p>
 <p>In various tutorials, you are told to choose a USB Rubber Ducky Payload from <a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads">this list</a>. And to paste it into a program called <a href="https://d4n5h.github.io/Duckuino/">Duckuino</a> that is supposed to translate it into the language microcontrollers can understand.
 However I couldnt get the script I wanted to work, and also you don&#39;t learn a lot by copying and pasting code...</p>
 <p>This is the &quot;Hello World!&quot; script in &quot;Rubber Ducky&quot; language :</p>
-<pre><code><span class="hljs-keyword">DELAY</span> <span class="hljs-number">3000</span>
+
+
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">
+DELAY 3000
 GUI r
-<span class="hljs-keyword">DELAY</span> <span class="hljs-number">500</span>
+DELAY 500
 STRING notepad
-<span class="hljs-keyword">DELAY</span> <span class="hljs-number">500</span>
+DELAY 500
 ENTER
-<span class="hljs-keyword">DELAY</span> <span class="hljs-number">750</span>
+DELAY 750
 STRING Hello World!
 ENTER
-</code></pre><p>Translating it with Duckuino gives the following :</p>
-<pre><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;HID-Project.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;HID-Settings.h&gt;</span></span>
+</code></pre></div>
 
-<span class="hljs-comment">// Utility function</span>
-<span class="hljs-keyword">void</span> typeKey(<span class="hljs-keyword">int</span> key){
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(key);
- <span class="hljs-built_in">delay</span>(<span class="hljs-number">50</span>);
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">release</span>(key);
+<p>Translating it with Duckuino gives the following :</p>
+
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">
+#include <HID-Project.h>
+#include <HID-Settings.h>
+
+// Utility function
+void typeKey(int key){
+ Keyboard.press(key);
+ delay(50);
+ Keyboard.release(key);
 }
 
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>()
+void setup()
 {
- <span class="hljs-comment">// Start Keyboard and Mouse</span>
- AbsoluteMouse.<span class="hljs-built_in">begin</span>();
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">begin</span>();
+ // Start Keyboard and Mouse
+ AbsoluteMouse.begin();
+ Keyboard.begin();
 
- <span class="hljs-comment">// Start Payload</span>
- <span class="hljs-built_in">delay</span>(<span class="hljs-number">3000</span>);
+ // Start Payload
+ delay(3000);
 
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(KEY_LEFT_GUI);
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">press</span>(<span class="hljs-number">114</span>);
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">releaseAll</span>();
- <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"notepad"</span>);
- <span class="hljs-built_in">delay</span>(<span class="hljs-number">500</span>);
+ Keyboard.press(KEY_LEFT_GUI);
+ Keyboard.press(114);
+ Keyboard.releaseAll();
+ delay(500);
+ Keyboard.print("notepad");
+ delay(500);
  typeKey(KEY_RETURN);
 
- <span class="hljs-built_in">delay</span>(<span class="hljs-number">750</span>);
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello World!"</span>);
+ delay(750);
+ Keyboard.print("Hello World!");
  typeKey(KEY_RETURN);
 
- <span class="hljs-comment">// End Payload</span>
- <span class="hljs-comment">// Stop Keyboard and Mouse</span>
- <span class="hljs-built_in">Keyboard</span>.<span class="hljs-built_in">end</span>();
- AbsoluteMouse.<span class="hljs-built_in">end</span>();
+ // End Payload
+ // Stop Keyboard and Mouse
+ Keyboard.end();
+ AbsoluteMouse.end();
 }
 
-<span class="hljs-comment">// Unused</span>
-<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {}
+// Unused
+void loop() {}
+
+</code></pre></div>
+
 </code></pre><p>The first thing you may notice is that it is calling a Mouse function. However, the mouse isn&#39;t used at all in this program. I believe this just appears for every program by default.
 I also found that using the Keyboard library was more simple and suits our needs for basic payloads. So, we can make things way more simple.</p>
-<h3 id="making-the-script-ourself">Making the script ourself</h3>
+
+<h3>Making the script ourself</h3>
 <p>Simply copy this <a href="https://github.com/onomastus/hardware-hacking/blob/master/bad-usb/badusb.ino">PoC script</a> and paste it in your Arduino IDE.
 Then, upload the script. Once it&#39;s uploaded, it will execute automatically.</p>
 <h4 id="explanations">Explanations</h4>
@@ -161,8 +208,6 @@ Then, upload the script. Once it&#39;s uploaded, it will execute automatically.<
 <li>Clean up the machine by deleting the folder.</li>
 </ul>
 
-</div>
-</div>
 
 <footer class="footer">
 <section class="container">
@@ -194,3 +239,21 @@ Then, upload the script. Once it&#39;s uploaded, it will execute automatically.<
 
   </body>
 </html>
+
+
+    <script async defer data-domain="example.com" src="https://analytics.example.com/js/plausible.js"></script>
+
+
+    <script data-goatcounter="https://code.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "token"}'></script>
+
+
+  </body>
+
+</html>
+
